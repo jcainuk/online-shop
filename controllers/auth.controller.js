@@ -2,4 +2,8 @@ const getSignup = (req, res) => {
 // ...
 };
 
-module.exports = { getSignup };
+const getLogin = (req, res) => {
+  // ...
+};
+
+module.exports = { getSignup, getLogin };
