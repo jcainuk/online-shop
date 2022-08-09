@@ -35,4 +35,6 @@ html {
 
   --border-radius-small: 4px;
   --border-radius-medium: 6px;
+
+  --shadow-medium: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
