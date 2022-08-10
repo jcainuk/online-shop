@@ -7,5 +7,5 @@ const {
 const { MongoClient } = mongodb;
 
 const connectToDatabase = async () => {
-  MongoClient.connect(MONGODB_URI);
+  await MongoClient.connect(MONGODB_URI);
 };
