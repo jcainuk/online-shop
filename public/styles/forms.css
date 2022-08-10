@@ -2,3 +2,9 @@ form hr {
   border-color: var(--color-primary-200);
   margin: var(--space-4);
 }
+
+label {
+  color: var(--color-gray-100);
+  display: block;
+  margin-bottom: var(--space-2);
+}
