@@ -12,3 +12,15 @@ const connectToDatabase = async () => {
   const client = await MongoClient.connect(MONGODB_URI);
   database = client.db(DB_NAME);
 };
+
+const getDb = () => {
+  if (!database) {
+    throw new Error('You must connect first!');
+  }
+
+  return database;
+};
+
+module.exports = {
+  connectToDatabase, getDb,
+};
