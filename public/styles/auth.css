@@ -11,3 +11,7 @@ form {
   border-radius: var(--border-radius-medium);
   text-align: center;
 }
+
+form a {
+  color: var(--color-primary-200);
+}
