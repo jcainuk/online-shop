@@ -6,6 +6,9 @@ const {
 
 const { MongoClient } = mongodb;
 
+let database;
+
 const connectToDatabase = async () => {
-  await MongoClient.connect(MONGODB_URI);
+  const client = await MongoClient.connect(MONGODB_URI);
+  database = client.db();
 };
