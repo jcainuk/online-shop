@@ -2,6 +2,7 @@ const path = require('path');
 const dotenv = require('dotenv').config();
 const express = require('express');
 
+const db = require('./data/database');
 const authRoutes = require('./routes/auth.routes');
 
 const app = express();
