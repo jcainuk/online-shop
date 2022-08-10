@@ -10,5 +10,5 @@ let database;
 
 const connectToDatabase = async () => {
   const client = await MongoClient.connect(MONGODB_URI);
-  database = client.db();
+  database = client.db(DB_NAME);
 };
