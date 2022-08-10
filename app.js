@@ -14,5 +14,9 @@ app.use(express.static('public'));
 
 app.use(authRoutes);
 
+db.connectToDatabase().then().catch((error) => {
+  console.log('Failed to connect to the database!');
+  console.log(error);
+});
 const { PORT } = process.env || 3000;
 app.listen(PORT);
