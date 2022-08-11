@@ -17,6 +17,8 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(csrf());
 
+app.use(addCsrfTokenMiddleware);
+
 app.use(authRoutes);
 
 db.connectToDatabase().then(() => {
