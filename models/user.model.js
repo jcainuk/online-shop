@@ -1,3 +1,5 @@
+const db = require('../data/database');
+
 class User {
   constructor(email, password, fullname, street, postal, city) {
     this.email = email;
@@ -8,5 +10,9 @@ class User {
       postalCode: postal,
       city,
     };
+  }
+
+  signup() {
+
   }
 }
