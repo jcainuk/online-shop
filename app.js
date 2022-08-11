@@ -18,6 +18,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 
+const sessionConfig = createSessionConfig();
+
+app.use(expressSession(sessionConfig));
 app.use(csrf());
 
 app.use(addCsrfTokenMiddleware);
