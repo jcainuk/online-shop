@@ -21,6 +21,8 @@ app.use(addCsrfTokenMiddleware);
 
 app.use(authRoutes);
 
+app.use();
+
 db.connectToDatabase().then(() => {
   const { PORT } = process.env || 3000;
   app.listen(PORT);
