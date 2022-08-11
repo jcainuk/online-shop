@@ -1,5 +1,5 @@
 const {
-  MONGODB_URI, DB_NAME, COLLECTION,
+  MONGODB_URI, DB_NAME, COLLECTION, SECRET,
 } = process.env;
 
 const mongoDbStore = require('connect-mongodb-session');
@@ -15,3 +15,13 @@ const createSessionStore = (session) => {
 
   return store;
 };
+
+const createSessionConfig = () => ({
+  secret: SECRET,
+  resave: false,
+  saveUninitialized: false,
+  store: createSessionStore(),
+  cookie: {
+    maxAge: 2 * 24 * 60 * 60 * 1000,
+  },
+});
