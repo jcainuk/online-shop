@@ -6,7 +6,7 @@ const expressSession = require('express-session');
 
 const mongoDbStore = require('connect-mongodb-session');
 
-const createSessionStore = (session) => {
+const createSessionStore = () => {
   const MongoDBStore = mongoDbStore(expressSession);
 
   const store = new MongoDBStore({
