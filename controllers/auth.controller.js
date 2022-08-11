@@ -15,6 +15,8 @@ const signup = async (req, res) => {
   );
 
   await user.signup();
+
+  res.redirect('/login');
 };
 
 const getLogin = (req, res) => {
