@@ -4,6 +4,7 @@ const express = require('express');
 const csrf = require('csurf');
 
 const db = require('./data/database');
+const addCsrfTokenMiddleware = require('./middlewares/csrf-token');
 const authRoutes = require('./routes/auth.routes');
 
 const app = express();
