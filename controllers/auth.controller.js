@@ -1,3 +1,5 @@
+const User = require('../models/user.model');
+
 const getSignup = (req, res) => {
   res.render('customer/auth/signup');
 };
