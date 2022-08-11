@@ -1,6 +1,7 @@
 const path = require('path');
 const dotenv = require('dotenv').config();
 const express = require('express');
+const csrf = require('csurf');
 
 const db = require('./data/database');
 const authRoutes = require('./routes/auth.routes');
