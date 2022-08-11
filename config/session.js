@@ -12,4 +12,6 @@ const createSessionStore = (session) => {
     databaseName: DB_NAME,
     collection: COLLECTION,
   });
+
+  return store;
 };
