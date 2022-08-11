@@ -13,6 +13,11 @@ class User {
   }
 
   signup() {
-
+    db.getDb().collection('users').insertOne({
+      email: this.email,
+      password: this.password, // ?,
+      name: this.name,
+      address: this.address,
+    });
   }
 }
