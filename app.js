@@ -2,6 +2,7 @@ const path = require('path');
 const dotenv = require('dotenv').config();
 const express = require('express');
 const csrf = require('csurf');
+const expressSession = require('express-session');
 
 const createSessionConfig = require('./config/session');
 const db = require('./data/database');
