@@ -20,7 +20,7 @@ const signup = async (req, res) => {
 };
 
 const getLogin = (req, res) => {
-  // ...
+  res.render('customer/auth/login');
 };
 
 module.exports = { getSignup, getLogin, signup };
