@@ -2,6 +2,8 @@ const {
   MONGODB_URI, DB_NAME, COLLECTION, SECRET,
 } = process.env;
 
+const expressSession = require('express-session');
+
 const mongoDbStore = require('connect-mongodb-session');
 
 const createSessionStore = (session) => {
