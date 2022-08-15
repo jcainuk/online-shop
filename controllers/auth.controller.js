@@ -7,15 +7,6 @@ const getSignup = (req, res) => {
 };
 
 const signup = async (req, res, next) => {
-  const user = new User(
-    req.body.email,
-    req.body.password,
-    req.body.fullname,
-    req.body.street,
-    req.body.postal,
-    req.body.city,
-  );
-
   if (!validation.userDetailsAreValid(
     req.body.email,
     req.body.password,
@@ -25,6 +16,22 @@ const signup = async (req, res, next) => {
     req.body.city,
   ) || !validation.emailIsConfirmed(req.body.email, req.body['confirm-email'])
   ) {
+    res.redirect('/signup');
+    return;
+  }
+
+  const user = new User(
+    req.body.email,
+    req.body.password,
+    req.body.fullname,
+    req.body.street,
+    req.body.postal,
+    req.body.city,
+  );
+
+  const existsAlready = await user.existsAlready();
+
+  if (existsAlready) {
     res.redirect('/signup');
     return;
   }
