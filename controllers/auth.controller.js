@@ -46,7 +46,10 @@ const login = async (req, res) => {
   });
 };
 
-const logout = (req, res) => {};
+const logout = (req, res) => {
+  authUtil.destroyUserAuthSession(req);
+  res.redirect('/login');
+};
 
 module.exports = {
   getSignup, getLogin, signup, login, logout,
