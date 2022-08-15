@@ -1,6 +1,6 @@
 const User = require('../models/user.model');
 const authUtil = require('../util/authentication');
-const userCredentialsAreValid = require('../util/validation');
+const userDetailsAreValid = require('../util/validation');
 
 const getSignup = (req, res) => {
   res.render('customer/auth/signup');
@@ -16,7 +16,7 @@ const signup = async (req, res, next) => {
     req.body.city,
   );
 
-  if (!userCredentialsAreValid(
+  if (!userDetailsAreValid(
     req.body.email,
     req.body.password,
     req.body.fullname,
