@@ -11,3 +11,5 @@ const userDetailsAreValid = (email, password, name, street, postal, city) => (
   && !isEmpty(street)
   && !isEmpty(postal)
   && !isEmpty(city));
+
+module.exports = userDetailsAreValid;
