@@ -23,8 +23,15 @@ const getLogin = (req, res) => {
   res.render('customer/auth/login');
 };
 
-const login = (req, res) => {
+const login = async (req, res) => {
+  const user = new User(req.body.email, req.body.password);
+  const existingUser = await user.getUserWithSameEmail();
 
+  if (!existingUser) {
+    res.redirect('/login');
+    // eslint-disable-next-line no-useless-return
+    return;
+  }
 };
 
 module.exports = { getSignup, getLogin, signup };
