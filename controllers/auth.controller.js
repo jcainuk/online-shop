@@ -16,6 +16,19 @@ const signup = async (req, res, next) => {
     req.body.city,
   );
 
+  if (!userCredentialsAreValid(
+    req.body.email,
+    req.body.password,
+    req.body.fullname,
+    req.body.street,
+    req.body.postal,
+    req.body.city,
+  )
+  ) {
+    res.redirect('/signup');
+    return;
+  }
+
   try {
     await user.signup();
   } catch (error) {
