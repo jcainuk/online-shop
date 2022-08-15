@@ -29,14 +29,14 @@ const signup = async (req, res, next) => {
     req.body.city,
   );
 
-  const existsAlready = await user.existsAlready();
-
-  if (existsAlready) {
-    res.redirect('/signup');
-    return;
-  }
-
   try {
+    const existsAlready = await user.existsAlready();
+
+    if (existsAlready) {
+      res.redirect('/signup');
+      return;
+    }
+
     await user.signup();
   } catch (error) {
     next(error);
