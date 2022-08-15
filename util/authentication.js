@@ -3,4 +3,8 @@ const createUserSession = (req, user, action) => {
   req.session.save(action);
 };
 
-module.exports = { createUserSession };
+const destroyUserAuthSession = (req) => {
+  req.session.uid = null;
+};
+
+module.exports = { createUserSession, destroyUserAuthSession };
