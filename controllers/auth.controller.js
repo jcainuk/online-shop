@@ -38,9 +38,10 @@ const login = async (req, res) => {
 
   if (!passwordIsCorrect) {
     res.redirect('/login');
-    // eslint-disable-next-line no-useless-return
     return;
   }
+
+  authUtil.createUserSession(req, existingUser, () => {});
 };
 
 module.exports = { getSignup, getLogin, signup };
