@@ -46,6 +46,8 @@ const login = async (req, res) => {
   });
 };
 
+const logout = (req, res) => {};
+
 module.exports = {
-  getSignup, getLogin, signup, login,
+  getSignup, getLogin, signup, login, logout,
 };
