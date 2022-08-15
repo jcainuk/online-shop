@@ -12,4 +12,6 @@ const userDetailsAreValid = (email, password, name, street, postal, city) => (
   && !isEmpty(postal)
   && !isEmpty(city));
 
-module.exports = userDetailsAreValid;
+const emailIsConfirmed = (email, confirmEmail) => email === confirmEmail;
+
+module.exports = { userDetailsAreValid, emailIsConfirmed };
