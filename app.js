@@ -27,7 +27,9 @@ app.use(csrf());
 
 app.use(addCsrfTokenMiddleware);
 
+app.use(baseRoutes);
 app.use(authRoutes);
+app.use(productsRoutes);
 
 app.use(errorHandlerMiddleware);
 
