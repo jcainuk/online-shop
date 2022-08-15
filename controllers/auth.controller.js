@@ -41,7 +41,9 @@ const login = async (req, res) => {
     return;
   }
 
-  authUtil.createUserSession(req, existingUser, () => {});
+  authUtil.createUserSession(req, existingUser, () => {
+    res.redirect('/');
+  });
 };
 
 module.exports = { getSignup, getLogin, signup };
