@@ -14,6 +14,7 @@ const signup = async (req, res, next) => {
     req.body.postal,
     req.body.city,
   );
+
   try {
     await user.signup();
   } catch (error) {
