@@ -50,7 +50,7 @@ const signup = async (req, res, next) => {
 
     if (existsAlready) {
       sessionFlash.flashDataToSession(req, {
-        errorMessage: 'User exists already!',
+        errorMessage: 'User exists already! Try logging in instead!',
       }, () => {
         res.redirect('/signup');
       });
