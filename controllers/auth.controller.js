@@ -1,6 +1,7 @@
 const User = require('../models/user.model');
 const authUtil = require('../util/authentication');
 const validation = require('../util/validation');
+const sessionFlash = require('../util/session-flash');
 
 const getSignup = (req, res) => {
   res.render('customer/auth/signup');
