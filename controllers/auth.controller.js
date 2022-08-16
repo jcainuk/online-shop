@@ -18,7 +18,7 @@ const getSignup = (req, res) => {
     };
   }
 
-  res.render('customer/auth/signup', { inputdata: sessionData });
+  res.render('customer/auth/signup', { inputData: sessionData });
 };
 
 const signup = async (req, res, next) => {
