@@ -4,12 +4,27 @@ const validation = require('../util/validation');
 const sessionFlash = require('../util/session-flash');
 
 const getSignup = (req, res) => {
+  let sessionData = sessionFlash.getSessionData(req);
+
+  if (!sessionData) {
+    sessionData = {
+      email: '',
+      confirmEmail: '',
+      password: '',
+      fullname: '',
+      street: '',
+      postal: '',
+      city: '',
+    };
+  }
+
   res.render('customer/auth/signup');
 };
 
 const signup = async (req, res, next) => {
   const enteredData = {
     email: req.body.email,
+    confirmEmail: req.body['confirm-email'],
     password: req.body.password,
     fullname: req.body.fullname,
     street: req.body.street,
