@@ -1,4 +1,4 @@
-<header>
+<header id="main-header">
   <div><a href="/">WDE</a></div>
   <nav>
     <ul>
@@ -20,7 +20,7 @@
        <li><a href="/signup">Signup</a></li>
        <li><a href="/login">Login</a></li>
        <% } %>
-       
+
       <% if (locals.isAuth) { %>
       <li>
         <form action="logout" method="POST">
