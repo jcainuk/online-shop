@@ -17,7 +17,12 @@ const signup = async (req, res, next) => {
     req.body.city,
   ) || !validation.emailIsConfirmed(req.body.email, req.body['confirm-email'])
   ) {
-    res.redirect('/signup');
+    sessionFlash.flashDataToSession(req, {
+      errorMessage: 'Please check your input. Password must be at least 6 characters long. Postal code mut be at least 6 characters long.',
+    }, () => {
+      res.redirect('/signup');
+    });
+
     return;
   }
 
