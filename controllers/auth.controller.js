@@ -8,6 +8,15 @@ const getSignup = (req, res) => {
 };
 
 const signup = async (req, res, next) => {
+  const enteredData = {
+    email: req.body.email,
+    password: req.body.password,
+    fullname: req.body.fullname,
+    street: req.body.street,
+    postal: req.body.postal,
+    city: req.body.city,
+  };
+
   if (!validation.userDetailsAreValid(
     req.body.email,
     req.body.password,
