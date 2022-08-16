@@ -1,0 +1,3 @@
+const getSessionData = () => {};
+
+const flashDataToSession = () => {};
