@@ -1,6 +1,8 @@
 const getSessionData = () => {};
 
-const flashDataToSession = () => {};
+const flashDataToSession = (req, data, action) => {
+  req.session.flashedData = data;
+};
 
 module.exports = {
   getSessionData, flashDataToSession,
