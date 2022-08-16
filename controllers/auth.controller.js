@@ -99,7 +99,9 @@ const login = async (req, res, next) => {
   const passwordIsCorrect = await user.hasMatchingPassword(existingUser.password);
 
   if (!passwordIsCorrect) {
-    res.redirect('/login');
+    sessionFlash.flashDataToSession(req, sessionErrorData, () => {
+      res.redirect('/login');
+    });
     return;
   }
 
