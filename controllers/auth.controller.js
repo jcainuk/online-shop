@@ -28,6 +28,7 @@ const signup = async (req, res, next) => {
   ) {
     sessionFlash.flashDataToSession(req, {
       errorMessage: 'Please check your input. Password must be at least 6 characters long. Postal code mut be at least 6 characters long.',
+      ...enteredData,
     }, () => {
       res.redirect('/signup');
     });
