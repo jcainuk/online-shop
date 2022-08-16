@@ -83,7 +83,14 @@ const login = async (req, res, next) => {
   }
 
   if (!existingUser) {
-    res.redirect('/login');
+    sessionFlash.flashDataToSession(req, {
+      errorMessage: 'Invalid credentials - please double-check your email and password',
+      email: user.email,
+      password: user.password,
+    }, () => {
+      res.redirect('/login');
+    });
+
     return;
   }
 
