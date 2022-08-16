@@ -21,6 +21,10 @@
   align-items: center;
 }
 
+.nav-items li {
+  margin: 0 var(--space-2);
+}
+
 #mobile-menu-btn {
   display: flex;
   flex-direction: column;
