@@ -30,3 +30,9 @@
   width: 2.25rem;
   height: 2.25rem;
 }
+
+#mobile-menu-btn span {
+  width: 2.25rem;
+  height: 0.2rem;
+  background-color: var(--color-gray-100);
+}
