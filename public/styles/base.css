@@ -91,3 +91,7 @@ a {
   margin: var(--space-2) 0;
   text-transform: uppercase;
 }
+
+.alert p {
+  margin: var(--space-2) 0;
+}
