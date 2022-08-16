@@ -49,7 +49,12 @@ const signup = async (req, res, next) => {
     const existsAlready = await user.existsAlready();
 
     if (existsAlready) {
-      res.redirect('/signup');
+      sessionFlash.flashDataToSession(req, {
+        errorMessage: 'User exists already!',
+      }, () => {
+        res.redirect('/signup');
+      });
+
       return;
     }
 
