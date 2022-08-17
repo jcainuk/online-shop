@@ -33,6 +33,7 @@ app.use(checkAuthStatusMiddleware);
 app.use(baseRoutes);
 app.use(authRoutes);
 app.use(productsRoutes);
+app.use('/admin', adminRoutes);
 
 app.use(errorHandlerMiddleware);
 
