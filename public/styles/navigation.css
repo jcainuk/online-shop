@@ -102,6 +102,10 @@ main {
     display: none;
   }
 
+  .nav-items {
+    flex-direction: row;
+  }
+
   .nav-items a {
     padding: var(--space-2) var(--space-4);
     border-radius: var(--border-radius-small);
