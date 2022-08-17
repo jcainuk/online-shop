@@ -2,8 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/admin/products', () => {});
+router.get('/products', () => {});
 
-router.get('/admin/products/new', () => {});
+router.get('/products/new', () => {});
 
 module.exports = router;
