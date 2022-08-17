@@ -51,4 +51,13 @@
   #mobile-menu {
     display: none;
   }
+
+  .nav-items a {
+    padding: var(--space-2) var(--space-4);
+  }
+
+  .nav-items a:hover,
+  .nav-items a:active {
+    background-color: var(--color-primary-500-bg);
+  }
 }
