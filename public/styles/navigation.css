@@ -42,3 +42,9 @@
   height: 0.2rem;
   background-color: var(--color-gray-100);
 }
+
+@media (min-width: 48rem) {
+  #mobile-menu-btn {
+    display: none;
+  }
+}
