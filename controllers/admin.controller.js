@@ -2,8 +2,8 @@ const getProducts = (req, res) => {
   res.render('admin/products/all-products');
 };
 
-const getNewProduct = () => {
-
+const getNewProduct = (req, res) => {
+  res.render('admin/products/new-product');
 };
 
 const createNewProduct = () => {
