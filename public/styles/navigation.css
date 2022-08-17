@@ -103,6 +103,11 @@ main {
     display: block;
   }
 
+  .nav-items button {
+    color: var(--color-primary-500);
+    border-color: var(--color-primary-500);
+  }
+
   #mobile-menu-btn {
     display: none;
   }
