@@ -54,6 +54,7 @@
 
   .nav-items a {
     padding: var(--space-2) var(--space-4);
+    border-radius: var(--border-radius-small);
   }
 
   .nav-items a:hover,
