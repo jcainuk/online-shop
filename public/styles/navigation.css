@@ -1,3 +1,7 @@
+main {
+  margin-top: 6rem;
+}
+
 #main-header {
   position: fixed;
   top: 0;
@@ -47,6 +51,10 @@
 }
 
 @media (min-width: 48rem) {
+  main {
+    margin-top: 0;
+  }
+
   #mobile-menu-btn {
     display: none;
   }
