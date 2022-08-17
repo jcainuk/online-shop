@@ -75,6 +75,12 @@ main {
   margin: var(--space-4) auto;
 }
 
+#mobile-menu .nav-items a,
+#mobile-menu .nav-items button {
+  font-size: 1.75rem;
+  color: var(--color-primary-100);
+}
+
 @media (min-width: 48rem) {
   main {
     margin-top: 0;
