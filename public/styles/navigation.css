@@ -1,4 +1,7 @@
 #main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   max-width: 60rem;
   height: 5rem;
