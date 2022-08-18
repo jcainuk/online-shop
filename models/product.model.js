@@ -11,6 +11,8 @@ class Product {
     this.imageUrl = `/products/assets/images/${productData.image}`;
   }
 
+  static async findAll() {}
+
   async save() {
     const productData = {
       title: this.title,
