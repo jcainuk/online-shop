@@ -1,3 +1,5 @@
+const Product = require('../models/product.model');
+
 const getProducts = (req, res) => {
   res.render('admin/products/all-products');
 };
