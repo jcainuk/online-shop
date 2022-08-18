@@ -12,7 +12,14 @@ class Product {
   }
 
   async save() {
-    db.getDb().collection('products').insertOne();
+    const productData = {
+      title: this.title,
+      summary: this.summary,
+      price: this.price,
+      description: this.description,
+      image: this.image,
+    };
+    db.getDb().collection('products').insertOne(productData);
   }
 }
 
