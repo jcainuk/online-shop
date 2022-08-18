@@ -10,7 +10,7 @@ const getNewProduct = (req, res) => {
 
 const createNewProduct = async (req, res, next) => {
   const product = new Product({
-    ...req.body, image: req.file.fileName,
+    ...req.body, image: req.file.filename,
   });
 
   try {
