@@ -13,16 +13,11 @@
   </section>
   <section>
    <ul>
-    <li>
-      <article>
-        <img src="" alt="">
-        <h2>TITLE</h2>
-        <div>
-          <a class="btn btn-alt" href="">View & Edit</a>
-          <button class="btn btn-alt" >Delete</button>
-        </div>
-      </article>
-    </li>
+    <% for (const ... of ...) { %>
+      <li>
+        <%- include('includes/product-item') %>
+      </li>
+    <% } %>
    </ul>
   </section>
  </main>
