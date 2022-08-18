@@ -9,6 +9,9 @@ class Product {
     this.image = productData.image;
     this.imagePath = `product-data/images/${productData.image}`;
     this.imageUrl = `/products/assets/images/${productData.image}`;
+    if (productData._id) {
+      this.id = productData._id.toString();
+    }
   }
 
   static async findAll() {
