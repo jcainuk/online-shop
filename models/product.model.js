@@ -15,7 +15,7 @@ class Product {
   }
 
   static async findAll() {
-    const products = await db.getDb().collection('products').find().toArray;
+    const products = await db.getDb().collection('products').find().toArray();
 
     return products.map((productDocument) => new Product(productDocument));
   }
