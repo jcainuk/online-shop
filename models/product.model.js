@@ -19,8 +19,7 @@ class Product {
       description: this.description,
       image: this.image,
     };
-    db.getDb().collection('products').insertOne(productData);
+    await db.getDb().collection('products').insertOne(productData);
   }
-}
 
 module.exports = Product;
