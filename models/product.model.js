@@ -11,7 +11,9 @@ class Product {
     this.imageUrl = `/products/assets/images/${productData.image}`;
   }
 
-  async save() {}
+  async save() {
+    db.getDb().collection('products').insertOne();
+  }
 }
 
 module.exports = Product;
