@@ -8,9 +8,12 @@ const getNewProduct = (req, res) => {
   res.render('admin/products/new-product');
 };
 
-const createNewProduct = (req, res) => {
-  console.log(req.body);
-  console.log(req.file);
+const createNewProduct = async (req, res) => {
+  const product = new Product({
+    ...req.body, image: req.file.fileName,
+  });
+
+  await product.save();
 
   res.redirect('/admin/products');
 };

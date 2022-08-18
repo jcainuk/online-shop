@@ -21,5 +21,6 @@ class Product {
     };
     await db.getDb().collection('products').insertOne(productData);
   }
+}
 
 module.exports = Product;
