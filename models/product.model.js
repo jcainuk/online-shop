@@ -1,3 +1,5 @@
+const db = require('../data/database');
+
 class Product {
   constructor(productData) {
     this.title = productData.title;
@@ -8,6 +10,8 @@ class Product {
     this.imagePath = `product-data/images/${productData.image}`;
     this.imageUrl = `/products/assets/images/${productData.image}`;
   }
+
+  async save() {}
 }
 
 module.exports = Product;
