@@ -11,7 +11,9 @@ class Product {
     this.imageUrl = `/products/assets/images/${productData.image}`;
   }
 
-  static async findAll() {}
+  static async findAll() {
+    const products = await db.getDb().collection('products').find().toArray;
+  }
 
   async save() {
     const productData = {
