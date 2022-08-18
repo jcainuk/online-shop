@@ -6,6 +6,7 @@ class Product {
     this.description = productData.description;
     this.image = productData.image; // name of image file
     this.imagePath = `product-data/images/${productData.image}`;
+    this.imageUrl = `/products/assets/images/${productData.image}`;
   }
 }
 
