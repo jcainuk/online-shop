@@ -2,4 +2,6 @@ const multer = require('multer');
 
 const upload = multer({});
 
-upload.single();
+const configuredMulterMiddleware = upload.single('image');
+
+module.exports = configuredMulterMiddleware;
