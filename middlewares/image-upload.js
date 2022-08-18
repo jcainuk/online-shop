@@ -4,7 +4,7 @@ const uuid = require('uuid').v4;
 const upload = multer({
   storage: multer.diskStorage({
     destination: 'product-data/images',
-    filename: (req, file, cb) => {
+    filename(req, file, cb) {
       cb(null, `${uuid()}-${file.originalname}`);
     },
   }),
