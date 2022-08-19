@@ -42,6 +42,10 @@ const updateProduct = (req, res) => {
     ...req.body,
     _id: req.params.id,
   });
+
+  if (req.file) {
+    // replace the old image with the new one
+  }
 };
 
 module.exports = {
