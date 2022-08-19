@@ -47,7 +47,12 @@ class Product {
       description: this.description,
       image: this.image,
     };
-    await db.getDb().collection('products').insertOne(productData);
+
+    if (this.id) {
+      // ...
+    } else {
+      await db.getDb().collection('products').insertOne(productData);
+    }
   }
 }
 
