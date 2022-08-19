@@ -57,6 +57,8 @@ class Product {
       await db.getDb().collection('products').insertOne(productData);
     }
   }
+
+  replaceImage() {}
 }
 
 module.exports = Product;
