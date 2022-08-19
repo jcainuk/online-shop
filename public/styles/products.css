@@ -1,0 +1,6 @@
+.product-item {
+  padding: var(--space-4);
+  border-radius: var(--border-radius-medium);
+  text-align: center;
+  background-color: var(--color-gray-600);
+}
