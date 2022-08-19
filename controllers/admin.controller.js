@@ -37,8 +37,11 @@ const getUpdateProduct = async (req, res, next) => {
   }
 };
 
-const updateProduct = () => {
-
+const updateProduct = (req, res) => {
+  const product = new Product({
+    ...req.body,
+    _id: req.params.id,
+  });
 };
 
 module.exports = {
