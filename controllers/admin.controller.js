@@ -28,6 +28,14 @@ const createNewProduct = async (req, res, next) => {
   res.redirect('/admin/products');
 };
 
+const getUpdateProduct = () => {
+
+};
+
+const updateProduct = () => {
+
+};
+
 module.exports = {
-  getProducts, getNewProduct, createNewProduct,
+  getProducts, getNewProduct, createNewProduct, getUpdateProduct, updateProduct,
 };
