@@ -58,7 +58,9 @@ class Product {
     }
   }
 
-  replaceImage() {}
+  async replaceImage(newImage) {
+    this.image = newImage;
+  }
 }
 
 module.exports = Product;
