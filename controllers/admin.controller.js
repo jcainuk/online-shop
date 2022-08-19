@@ -37,7 +37,7 @@ const getUpdateProduct = async (req, res, next) => {
   }
 };
 
-const updateProduct = (req, res) => {
+const updateProduct = async (req, res) => {
   const product = new Product({
     ...req.body,
     _id: req.params.id,
@@ -46,6 +46,7 @@ const updateProduct = (req, res) => {
   if (req.file) {
     product.replaceImage(req.file.filename);
   }
+  await product.save();
 };
 
 module.exports = {
