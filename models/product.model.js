@@ -19,6 +19,10 @@ class Product {
   static async findById(productId) {
     const prodId = new mongodb.ObjectId(productId);
     const product = await db.getDb().collection('products').findOne({ _id: prodId });
+    if (!product) {
+      const error = new Error('Could not find product with provided id.');
+      throw error;
+    }
     return product;
   }
 
