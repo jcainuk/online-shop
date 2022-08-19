@@ -29,7 +29,7 @@ class Product {
       error.code = 404;
       throw error;
     }
-    return product;
+    return new Product(product);
   }
 
   static async findAll() {
