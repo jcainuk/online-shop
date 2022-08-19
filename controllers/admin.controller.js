@@ -44,7 +44,7 @@ const updateProduct = (req, res) => {
   });
 
   if (req.file) {
-    // replace the old image with the new one
+    product.replaceImage(req.file.filename);
   }
 };
 
