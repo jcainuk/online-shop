@@ -49,7 +49,10 @@ class Product {
     };
 
     if (this.id) {
-      // ...
+      const productId = new mongodb.ObjectId(this.id);
+      await db.getDb().collection('products').updateOne({ _id: productId }, {
+        $set: productData,
+      });
     } else {
       await db.getDb().collection('products').insertOne(productData);
     }
