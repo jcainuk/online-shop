@@ -21,6 +21,7 @@ class Product {
     const product = await db.getDb().collection('products').findOne({ _id: prodId });
     if (!product) {
       const error = new Error('Could not find product with provided id.');
+      error.code = 404;
       throw error;
     }
     return product;
