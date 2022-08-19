@@ -21,3 +21,8 @@
 .product-item-content {
   padding: var(--space-4);
 }
+
+.product-item-content h2 {
+  font-size: 1.15rem;
+  margin: var(--space-2) 0;
+}
