@@ -64,6 +64,7 @@ class Product {
 
   async replaceImage(newImage) {
     this.image = newImage;
+    this.updateImagedata();
   }
 }
 
