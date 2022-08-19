@@ -11,4 +11,8 @@ router.get('/products/new', adminController.getNewProduct);
 
 router.post('/products', imageUploadMiddleware, adminController.createNewProduct);
 
+router.get('/products/:id');
+
+router.post('/products/:id');
+
 module.exports = router;
