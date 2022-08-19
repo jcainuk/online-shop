@@ -51,7 +51,9 @@ const updateProduct = async (req, res, next) => {
     await product.save();
   } catch (error) {
     next(error);
+    return;
   }
+  res.redirect('/admin/products');
 };
 
 module.exports = {
