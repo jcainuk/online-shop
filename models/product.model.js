@@ -54,6 +54,11 @@ class Product {
 
     if (this.id) {
       const productId = new mongodb.ObjectId(this.id);
+
+      if (!this.image) {
+        delete productData.image;
+      }
+
       await db.getDb().collection('products').updateOne({ _id: productId }, {
         $set: productData,
       });
