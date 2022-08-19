@@ -14,6 +14,8 @@ class Product {
     }
   }
 
+  static async findById(productId) {}
+
   static async findAll() {
     const products = await db.getDb().collection('products').find().toArray();
 
