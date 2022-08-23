@@ -71,6 +71,10 @@ class Product {
     this.image = newImage;
     this.updateImagedata();
   }
+
+  async remove() {
+    await db.getDb.collection('products').deleteOne({});
+  }
 }
 
 module.exports = Product;
