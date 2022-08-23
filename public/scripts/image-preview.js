@@ -8,6 +8,8 @@ const updateImagePreview = () => {
     return;
   }
   const pickedFile = files[0];
+
+  URL.createObjectURL(pickedFile);
 };
 
 imagePickerElement.addEventListener('change', updateImagePreview);
