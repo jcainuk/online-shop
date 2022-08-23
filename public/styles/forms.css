@@ -22,3 +22,7 @@ textarea {
   display: flex;
   align-items: center;
 }
+
+#image-upload-control input {
+  max-width: 15rem;
+}
