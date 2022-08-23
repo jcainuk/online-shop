@@ -5,9 +5,15 @@ const deleteProduct = async (event) => {
   const productId = buttonElement.dataset.productid;
   const csrfToken = buttonElement.dataset.csrf;
 
-  await fetch(`/admin/products/${productId}?_csrf=${csrfToken}`, {
+  const response = await fetch(`/admin/products/${productId}?_csrf=${csrfToken}`, {
     method: 'DELETE',
   });
+
+  if (!response.ok) {
+    alert('Something went wrong!');
+    return;
+  }
+  buttonElement.parentElement.parentElement.parentElement.parentElement.remove();
 };
 
 deleteProductButtonElements.forEach((deleteProductButtonElement) => {
