@@ -3,8 +3,9 @@ const deleteProductButtonElements = document.querySelectorAll('.product-item but
 const deleteProduct = (event) => {
   const buttonElement = event.target;
   const productId = buttonElement.dataset.productid;
+  const csrfToken = buttonElement.dataset.csrf;
 
-  fetch(`/admin/products/${productId}`, {
+  fetch(`/admin/products/${productId}?_csrf=${csrfToken}`, {
     method: 'DELETE',
   });
 };
