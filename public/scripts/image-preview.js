@@ -9,7 +9,7 @@ const updateImagePreview = () => {
   }
   const pickedFile = files[0];
 
-  URL.createObjectURL(pickedFile);
+  imagePreviewElement.src = URL.createObjectURL(pickedFile);
 };
 
 imagePickerElement.addEventListener('change', updateImagePreview);
