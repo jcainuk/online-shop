@@ -33,3 +33,10 @@
   margin-top: var(--space-4);
   justify-content: center;
 }
+
+#product-details header {
+  margin-top: var(--space-8);
+  padding: var(--space-8);
+  background-color: var(--color-gray-600);
+  gap: var(--space-8);
+}
