@@ -10,7 +10,11 @@ const getAllProducts = async (req, res, next) => {
 };
 
 const getProductDetails = async (req, res, next) => {
-  const product = await Product.findById(req.params.id);
+  try {
+    const product = await Product.findById(req.params.id);
+  } catch (error) {
+    next(error);
+  }
 };
 
 module.exports = { getAllProducts, getProductDetails };
