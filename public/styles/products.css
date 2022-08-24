@@ -58,3 +58,20 @@
   padding: var(--space-8);
   white-space: pre-wrap;
 }
+
+@media (min-width: 48rem) {
+  #product-details header {
+    display: flex;
+  }
+
+  #product-details img {
+    width: 20rem;
+    height: 15rem;
+    transform: rotateZ(-10deg);
+    margin: var(--space-8);
+  }
+
+  #product-info {
+    text-align: left;
+  }
+}
