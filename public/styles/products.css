@@ -52,3 +52,9 @@
 #product-info {
   text-align: center;
 }
+
+#product-description {
+  background-color: var(--color-primary-500-bg);
+  padding: var(--space-8);
+  white-space: pre-wrap;
+}
