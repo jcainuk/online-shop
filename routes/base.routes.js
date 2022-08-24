@@ -7,11 +7,11 @@ router.get('/', (req, res) => {
 });
 
 router.get('/401', (req, res) => {
-  res.render('shared/401');
+  res.status(401).render('shared/401');
 });
 
 router.get('/403', (req, res) => {
-  res.render('shared/403');
+  res.status(403).render('shared/403');
 });
 
 module.exports = router;
