@@ -8,3 +8,5 @@ const getAllProducts = async (req, res, next) => {
     next(error);
   }
 };
+
+module.exports = { getAllProducts };
