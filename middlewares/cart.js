@@ -10,6 +10,8 @@ const initializeCart = (req, res, next) => {
   }
 
   res.locals.cart = cart;
+
+  next();
 };
 
 module.exports = initializeCart;
