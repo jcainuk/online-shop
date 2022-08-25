@@ -1,6 +1,7 @@
 const Product = require('../models/product.model');
 
-const addCartItem = (req, res) => {
+const addCartItem = async (req, res) => {
+  const product = await Product.findById(req.body.productId);
   res.locals.cart.addItem();
 };
 
