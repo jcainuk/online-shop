@@ -1,3 +1,5 @@
+const Cart = require('../models/cart.model');
+
 const initializeCart = (req, res, next) => {
   let cart;
 
