@@ -9,6 +9,7 @@ const addToCart = async () => {
       method: 'POST',
       body: JSON.stringify({
         productId,
+        _csrf: 
       }),
       headers: {
         'Content-Type': 'application/json',
