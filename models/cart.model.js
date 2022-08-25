@@ -18,9 +18,14 @@ class Cart {
         cartItem.quantity += 1;
         cartItem.totalPrice += product.price;
         this.items[i] = cartItem;
+
+        this.totalQuantity += 1;
+        this.totalPrice += product.price;
         return;
       }
     }
     this.items.push(cartItem);
+    this.totalQuantity += 1;
+    this.totalPrice += product.price;
   }
 }
