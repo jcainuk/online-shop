@@ -9,8 +9,14 @@ const addCartItem = async (req, res, next) => {
     return;
   }
   const { cart } = res.locals;
+
   cart.addItem(product);
   req.session.cart = cart;
+
+  res.status(201).json({
+    message: 'Cart updated!',
+
+  });
 };
 
 module.exports = {
