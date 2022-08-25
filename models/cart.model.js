@@ -29,3 +29,5 @@ class Cart {
     this.totalPrice += product.price;
   }
 }
+
+module.exports = Cart;
