@@ -5,7 +5,11 @@ const initializeCart = (req, res, next) => {
 
   if (!req.session.cart) {
     cart = new Cart();
+  } else {
+    cart = new Cart(req.session.cart.items);
   }
+
+  res.locals.cart = cart;
 };
 
 module.exports = initializeCart;
