@@ -8,8 +8,9 @@ const addCartItem = async (req, res, next) => {
     next(error);
     return;
   }
-
-  res.locals.cart.addItem(product);
+  const { cart } = res.locals;
+  cart.addItem(product);
+  req.session.cart = cart;
 };
 
 module.exports = {
