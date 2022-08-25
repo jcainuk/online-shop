@@ -15,7 +15,7 @@ const addCartItem = async (req, res, next) => {
 
   res.status(201).json({
     message: 'Cart updated!',
-
+    newTotalItems: cart.totalQuantity,
   });
 };
 
