@@ -27,6 +27,8 @@ const addToCart = async () => {
   const responseData = await response.json();
 
   const newTotalQuantity = responseData.newTotalItems;
+
+  cartBadgeElement.textContent = newTotalQuantity;
 };
 
 addToCartButtonElement.addEventListener('click', addToCart);
