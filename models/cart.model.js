@@ -1,5 +1,5 @@
 class Cart {
-  constructor(items = []) {
+  constructor(items = [], totalQuantity = 0, totalPrice = 0) {
     this.items = items;
   }
 
