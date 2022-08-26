@@ -12,6 +12,13 @@
   margin: 0;
 }
 
+.cart-item input {
+  font: inherit;
+  padding: var(--space-2);
+  border-radius: var(--border-radius-small);
+  border: none;
+}
+
 @media (min-width: 48rem) {
   .cart-item {
     flex-direction: row;
