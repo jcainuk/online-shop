@@ -1,7 +1,7 @@
 const Product = require('../models/product.model');
 
-const getCart = () => {
-
+const getCart = (req, res) => {
+  res.render('customer/cart/cart');
 };
 
 const addCartItem = async (req, res, next) => {
