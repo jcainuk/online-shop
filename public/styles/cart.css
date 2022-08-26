@@ -24,6 +24,11 @@
   color: var(--color-gray-300);
 }
 
+#cart-total {
+  display: flex;
+  justify-content: space-between;
+}
+
 #cart-total p {
   font-size: 1.5rem;
   font-weight: bold;
