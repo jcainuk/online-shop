@@ -19,6 +19,11 @@
   border: none;
 }
 
+.cart-product-price {
+  font-style: italic;
+  color: var(--color-gray-300);
+}
+
 @media (min-width: 48rem) {
   .cart-item {
     flex-direction: row;
