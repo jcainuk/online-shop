@@ -5,14 +5,10 @@
   <%- include('../../shared/includes/header') %>
  <main>
  <h1>Your Cart</h1>
- <ul id="products-grid">
-  <% for (const product of products) { %>
-    <li>
-      <%- include('../../shared/includes/product-item', { product: product }) %>
-    </li>
-   <% } %>
-
- </ul>
+  <ul id="cart-items"></ul>
+  <div id="cart-total">
+    <p>Total: £...</p>
+  </div>
  </main>
 
 <%- include('../../shared/includes/footer') %>
