@@ -5,7 +5,21 @@
   <%- include('../../shared/includes/header') %>
  <main>
  <h1>Your Cart</h1>
-  <ul id="cart-items"></ul>
+  <ul id="cart-items">
+    <li>
+      <article class="cart-item">
+        <div class="cart-item-info">
+          <h2>TITLE</h2>
+          <p>TOTAL PRICE (PRICE FOR A SINGLE PRODUCT)</p>
+        </div>
+
+        <div class="cart-item-management">
+          <input type="number" required>
+          <button>Update</button>
+        </div>
+      </article>
+    </li>
+  </ul>
   <div id="cart-total">
     <p>Total: £...</p>
 
