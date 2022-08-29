@@ -29,6 +29,15 @@ const updateCartItem = (req, res) => {
   cart.updateItem(req.body.productId, req.body.quantity);
 
   req.session.cart = cart;
+
+  res.json({
+    message: 'Item updated!',
+    updatedCartData: {
+      newTotalQuantity: cart.totalQuantity,
+      newTotalPrice: cart.totalPrice,
+
+    },
+  });
 };
 
 module.exports = {
