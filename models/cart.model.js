@@ -46,7 +46,7 @@ class Cart {
         this.items.splice(i, 1);
         this.totalQuantity -= item.quantity;
         this.totalPrice -= item.totalPrice;
-        return { updatedItemPrice: cartItem.totalPrice };
+        return { updatedItemPrice: 0 };
       }
     }
   }
