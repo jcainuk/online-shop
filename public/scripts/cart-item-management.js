@@ -1,8 +1,10 @@
-const cartItemUpdateFormElements = document.querySelectorAll('.cart-item-management');
+const cartItemUpdateFormElements = document.querySelectorAll(
+  '.cart-item-management',
+);
 const cartTotalPriceElement = document.getElementById('cart-total-price');
-const cartBadge = document.querySelectorAll('.nav-items .badge');
+const cartBadge = document.querySelector('.nav-items .badge');
 
-const updateCartItem = async (event) => {
+async function updateCartItem(event) {
   event.preventDefault();
 
   const form = event.target;
@@ -36,7 +38,7 @@ const updateCartItem = async (event) => {
 
   const responseData = await response.json();
 
-  if (responseData.updatedCartData.updatedCartData === 0) {
+  if (responseData.updatedCartData.updatedItemPrice === 0) {
     form.parentElement.parentElement.remove();
   } else {
     const cartItemTotalPriceElement = form.parentElement.querySelector('.cart-item-price');
@@ -45,7 +47,9 @@ const updateCartItem = async (event) => {
 
   cartTotalPriceElement.textContent = responseData.updatedCartData.newTotalPrice.toFixed(2);
 
-  cartBadge.textContent = responseData.newTotalQuantity;
-};
+  cartBadge.textContent = responseData.updatedCartData.newTotalQuantity;
+}
 
-cartItemUpdateFormElements.forEach((formElement) => { formElement.addEventListener('submit', updateCartItem); });
+for (const formElement of cartItemUpdateFormElements) {
+  formElement.addEventListener('submit', updateCartItem);
+}
