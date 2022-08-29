@@ -33,6 +33,14 @@ const updateCartItem = async (event) => {
   }
 
   const responseData = await response.json();
+
+  const cartItemTotalPriceElement = form.parentElement.querySelector('.cart-item-price');
+  cartItemTotalPriceElement.textContent = responseData.updatedCartItem.updatedItemPrice;
+  const cartTotalPriceElement = document.getElementById('cart-total-price');
+  cartTotalPriceElement.textContent = responseData.newTotalPrice.toFixed(2);
+
+  const cartBadge = document.querySelectorAll('.nav-items .badge');
+  cartBadge.textContent = responseData.newTotalQuantity;
 };
 
 cartItemUpdateFormElements.forEach((formElement) => { formElement.addEventListener('submit', updateCartItem); });
