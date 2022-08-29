@@ -28,6 +28,8 @@ class Cart {
     this.totalQuantity += 1;
     this.totalPrice += product.price;
   }
+
+  updateItem(productId, newQuantity) {}
 }
 
 module.exports = Cart;
