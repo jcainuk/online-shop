@@ -2,6 +2,11 @@ const cartItemUpdateFormElements = document.querySelectorAll('.cart-item-managem
 
 const updateCartItem = (event) => {
   event.preventDefault();
+
+  const form = event.target;
+
+  const productId = form.dataset.productid;
+  const csrfToken = form.dataset.csrf;
 };
 
 cartItemUpdateFormElements.forEach((formElement) => { formElement.addEventListener('submit', updateCartItem); });
