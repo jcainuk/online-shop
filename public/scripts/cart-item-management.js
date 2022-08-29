@@ -1,3 +1,7 @@
 const cartItemUpdateFormElements = document.querySelectorAll('.cart-item-management');
 
-cartItemUpdateFormElements.forEach((formElement) => { formElement.addEventListener('submit'); });
+const updateCartItem = (event) => {
+  event.preventDefault();
+};
+
+cartItemUpdateFormElements.forEach((formElement) => { formElement.addEventListener('submit', updateCartItem); });
