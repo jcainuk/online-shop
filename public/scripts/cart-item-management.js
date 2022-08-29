@@ -36,8 +36,12 @@ const updateCartItem = async (event) => {
 
   const responseData = await response.json();
 
-  const cartItemTotalPriceElement = form.parentElement.querySelector('.cart-item-price');
-  cartItemTotalPriceElement.textContent = responseData.updatedCartData.updatedItemPrice.toFixed(2);
+  if (responseData.updatedCartData.updatedCartData === 0) {
+    form.parentElement.parentElement.remove();
+  } else {
+    const cartItemTotalPriceElement = form.parentElement.querySelector('.cart-item-price');
+    cartItemTotalPriceElement.textContent = responseData.updatedCartData.updatedItemPrice.toFixed(2);
+  }
 
   cartTotalPriceElement.textContent = responseData.updatedCartData.newTotalPrice.toFixed(2);
 
