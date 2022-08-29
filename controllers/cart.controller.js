@@ -23,6 +23,14 @@ const addCartItem = async (req, res, next) => {
   });
 };
 
+const updateCartItem = (req, res) => {
+  const { cart } = res.locals;
+
+  cart.updateItem(req.body.productId, req.body.quantity);
+
+  req.session.cart = cart;
+};
+
 module.exports = {
-  addCartItem, getCart,
+  addCartItem, getCart, updateCartItem,
 };
