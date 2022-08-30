@@ -28,7 +28,7 @@ class Order {
         status: this.status,
       };
 
-      db.getDb().collection('orders').insertOne(orderDocument);
+      return db.getDb().collection('orders').insertOne(orderDocument);
     }
   }
 }
