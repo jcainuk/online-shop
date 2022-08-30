@@ -1,3 +1,5 @@
+const db = require('../data/database');
+
 class Order {
   constructor(cart, userData, status = 'pending', date, orderId) {
     this.productData = cart;
