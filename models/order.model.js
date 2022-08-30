@@ -14,6 +14,8 @@ class Order {
     }
     this.id = orderId;
   }
+
+  save() {}
 }
 
 module.exports = Order;
