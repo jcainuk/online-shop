@@ -17,7 +17,18 @@ class Order {
     this.id = orderId;
   }
 
-  save() {}
+  save() {
+    if (this.id) {
+      // Updating
+    } else {
+      const orderDocument = {
+        userData: this.userData,
+        productData: this.productData,
+        date: new Date(),
+        status: this.status,
+      };
+    }
+  }
 }
 
 module.exports = Order;
