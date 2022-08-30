@@ -14,6 +14,8 @@ class User {
     };
   }
 
+  static async findById() {}
+
   getUserWithSameEmail = () => db.getDb().collection('users').findOne({ email: this.email });
 
   async existsAlready() {
