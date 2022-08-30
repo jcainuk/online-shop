@@ -24,6 +24,8 @@ const addOrder = async (req, res, next) => {
     return;
   }
 
+  req.session.cart = null;
+
   res.redirect('/orders');
 };
 
