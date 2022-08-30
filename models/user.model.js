@@ -15,7 +15,9 @@ class User {
     };
   }
 
-  static async findById(userId) {}
+  static async findById(userId) {
+    const uid = new mongodb.ObjectId(userId);
+  }
 
   getUserWithSameEmail = () => db.getDb().collection('users').findOne({ email: this.email });
 
