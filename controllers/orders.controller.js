@@ -13,7 +13,14 @@ const addOrder = async (req, res, next) => {
 
   const order = new Order(cart, userDocument);
 
-  order.save();
+  try {
+    await order.save();
+  } catch (error) {
+    next(error);
+    return;
+  }
+
+  res.redirect('/orders');
 };
 
 module.exports = { addOrder };
