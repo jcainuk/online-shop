@@ -11,7 +11,9 @@ const addOrder = async (req, res, next) => {
     return next(error);
   }
 
-  const order = new Order(cart);
+  const order = new Order(cart, userDocument);
+
+  order.save();
 };
 
 module.exports = { addOrder };
