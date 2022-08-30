@@ -1,6 +1,10 @@
 const Order = require('../models/order.model');
 const User = require('../models/user.model');
 
+const getOrders = (req, res) => {
+  res.render('customer/orders/all-orders');
+};
+
 const addOrder = async (req, res, next) => {
   const { cart } = res.locals;
 
