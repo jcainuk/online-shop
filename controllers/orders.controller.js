@@ -27,4 +27,4 @@ const addOrder = async (req, res, next) => {
   res.redirect('/orders');
 };
 
-module.exports = { addOrder };
+module.exports = { addOrder, getOrders };
