@@ -8,8 +8,8 @@ class Product {
     this.summary = productData.summary;
     this.price = +productData.price;
     this.description = productData.description;
-    this.image = productData.image;
-    this.updateImagedata();
+    this.image = productData.image; // the name of the image file
+    this.updateImageData();
     if (productData._id) {
       this.id = productData._id.toString();
     }
@@ -17,18 +17,23 @@ class Product {
 
   static async findById(productId) {
     let prodId;
-    try { prodId = new mongodb.ObjectId(productId); } catch (error) {
+    try {
+      prodId = new mongodb.ObjectId(productId);
+    } catch (error) {
       error.code = 404;
       throw error;
     }
-
-    const product = await db.getDb().collection('products').findOne({ _id: prodId });
+    const product = await db
+      .getDb()
+      .collection('products')
+      .findOne({ _id: prodId });
 
     if (!product) {
       const error = new Error('Could not find product with provided id.');
       error.code = 404;
       throw error;
     }
+
     return new Product(product);
   }
 
@@ -38,7 +43,19 @@ class Product {
     return products.map((productDocument) => new Product(productDocument));
   }
 
-  updateImagedata() {
+  static async findMultiple(ids) {
+    const productIds = ids.map((id) => new mongodb.ObjectId(id));
+
+    const products = await db
+      .getDb()
+      .collection('products')
+      .find({ _id: { $in: productIds } })
+      .toArray();
+
+    return products.map((productDocument) => new Product(productDocument));
+  }
+
+  updateImageData() {
     this.imagePath = `product-data/images/${this.image}`;
     this.imageUrl = `/products/assets/images/${this.image}`;
   }
@@ -59,22 +76,25 @@ class Product {
         delete productData.image;
       }
 
-      await db.getDb().collection('products').updateOne({ _id: productId }, {
-        $set: productData,
-      });
+      await db.getDb().collection('products').updateOne(
+        { _id: productId },
+        {
+          $set: productData,
+        },
+      );
     } else {
       await db.getDb().collection('products').insertOne(productData);
     }
   }
 
-  async replaceImage(newImage) {
+  replaceImage(newImage) {
     this.image = newImage;
-    this.updateImagedata();
+    this.updateImageData();
   }
 
-  async remove() {
+  remove() {
     const productId = new mongodb.ObjectId(this.id);
-    await db.getDb().collection('products').deleteOne({ _id: productId });
+    return db.getDb().collection('products').deleteOne({ _id: productId });
   }
 }
 
