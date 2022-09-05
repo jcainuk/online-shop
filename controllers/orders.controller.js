@@ -38,11 +38,15 @@ async function addOrder(req, res, next) {
     payment_method_types: [
       'card',
     ],
-
     line_items: [
       {
-        // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-        price: '{{PRICE_ID}}',
+        price_data: {
+          currency: 'gbp',
+          product_data: {
+            name: 'Dummy',
+          },
+          unit_amount_decimal: 10.99,
+        },
         quantity: 1,
       },
     ],
