@@ -51,8 +51,8 @@ async function addOrder(req, res, next) {
       },
     ],
     mode: 'payment',
-    success_url: 'localhost:3000/success.html',
-    cancel_url: 'localhost:3000/cancel.html',
+    success_url: 'localhost:3000/success',
+    cancel_url: 'localhost:3000/cancel',
   });
 
   res.redirect(303, session.url);
