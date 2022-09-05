@@ -1,3 +1,5 @@
+const { STRIPEKEY } = process.env;
+const stripe = require('stripe')(STRIPEKEY);
 const Order = require('../models/order.model');
 const User = require('../models/user.model');
 
