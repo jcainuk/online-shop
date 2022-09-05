@@ -38,18 +38,16 @@ async function addOrder(req, res, next) {
     payment_method_types: [
       'card',
     ],
-    line_items: [
-      {
-        price_data: {
-          currency: 'gbp',
-          product_data: {
-            name: 'Dummy',
-          },
-          unit_amount_decimal: 10.99,
+    line_items: cart.items.map((item) => ({
+      price_data: {
+        currency: 'gbp',
+        product_data: {
+          name: item.product.title,
         },
-        quantity: 1,
+        unit_amount_decimal: +item.product.price,
       },
-    ],
+      quantity: item.quantity,
+    })),
     mode: 'payment',
     success_url: 'localhost:3000/orders/success',
     cancel_url: 'localhost:3000/orders/failure',
