@@ -58,7 +58,17 @@ async function addOrder(req, res, next) {
   res.redirect(303, session.url);
 }
 
+const getSuccess = (req, res) => {
+  res.render('customer/orders/success');
+};
+
+const getFailure = (req, res) => {
+  res.render('customer/orders/failure');
+};
+
 module.exports = {
   addOrder,
   getOrders,
+  getSuccess,
+  getFailure,
 };
